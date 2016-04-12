@@ -1,0 +1,26 @@
+{
+  "name": "Yaecs -Yet an other e-commerce system",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently \"npm run tsc:w\"",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "postinstall": "typings install"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-beta.11",
+    "systemjs": "0.19.24",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.2",
+    "zone.js": "0.6.4"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "typescript": "^1.8.9",
+    "typings":"^0.7.9"
+  }
+}

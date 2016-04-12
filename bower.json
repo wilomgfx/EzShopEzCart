@@ -1,0 +1,32 @@
+{
+  "name": "Yaecs -Yet an other e-commerce system",
+  "description": "A blazing fast e-commerce system based on angular2 consuming a RESTFUL Api",
+  "main": "index.html",
+  "authors": [
+    "William Cantin <william@wcantin.ca>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "e-commerce",
+    "angular2",
+    "angularjs",
+    "restful"
+  ],
+  "homepage": "https://github.com/wilomgfx/Yaecs",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+    ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "tether": "^1.2.0"
+  },
+  "install": {
+    "path": "libs/"
+  }
+}
