@@ -1,6 +1,7 @@
 import {Injectable} from 'angular2/core';
 import {Cart} from '../models/cart';
 import {Product} from '../models/product';
+import {Logger} from '../helpers/logger';
 
 @Injectable()
 export class CartService {
@@ -15,7 +16,7 @@ export class CartService {
 
     public addToCart(product:Product){
         this.cart.addToCart(product);
-        window.console.log(this.getNumOfProducts());
+        Logger.log(this.getNumOfProducts());
     }
 
 }
