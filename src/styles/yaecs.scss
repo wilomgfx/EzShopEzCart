@@ -1,3 +1,26 @@
-a  {
-    color: yellow;
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Required for navbar fixed-top */
+  padding-top: 70px;
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  margin-bottom: 0px;
+}
+
+.thumbnail__detail--mediumsize{
+
+}
+
+.badge{
+  color:yellow
 }

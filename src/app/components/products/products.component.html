@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-4" *ngFor="#product of products">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">{{product.name}}</h4>
+          <h6 class="card-subtitle text-muted">{{product.price | currency:'CAD':true}}</h6>
+        </div>
+        <img class="card-img-top" data-src="{{product.imagePath}}" alt="Card image cap">
+        <div class="card-block">
+          <p class="card-text">{{product.description}}</p>
+          <a class="card-link" (click)="gotoDetail(product)">Plus de détails</a>
+          <a href="#" class="btn btn-primary">Ajouter au pannier</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

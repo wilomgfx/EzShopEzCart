@@ -1,8 +1,9 @@
 {
-  "name": "Yaecs -Yet an other e-commerce system",
+  "name": "Yaecs",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npm run tsc:w\"",
+    "start": "npm run lite",
+    "lite": "lite-server",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
+    "lite-server": "^2.1.0",
     "typescript": "^1.8.9",
     "typings": "^0.7.9"
   }

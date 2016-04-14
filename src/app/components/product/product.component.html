@@ -1,0 +1,16 @@
+<div class="row" *ngIf="product">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-block">
+          <h4 class="card-title">{{product.name}}</h4>
+          <h6 class="card-subtitle text-muted">{{product.price | currency:'CAD':true}}</h6>
+        </div>
+        <img class="card-img-top" data-src="{{product.imagePath}}" alt="Card image cap">
+        <div class="card-block">
+          <p class="card-text">{{product.description}}</p>
+          <a href="#" class="btn btn-primary">Ajouter au panniers</a>
+          <button class="btn btn-danger" (click)="goBack()">Retour</button>
+        </div>
+      </div>
+    </div>
+</div>
