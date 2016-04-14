@@ -2,13 +2,19 @@
   <head>
     <title>Yaecs</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="app/css/yaecs.css">
     <link rel="stylesheet" href="libs/bootstrap/bootstrap.css">
     <base href="/">
   </head>
   <!-- Display the application -->
   <body>
-    <my-app>Loading...</my-app>
+    <my-app>
+        <div class="container">
+            <i class="fa fa-spinner fa-spin fa-3x fa-fw margin-bottom"></i>
+            <span class="sr-only">Loading...</span>
+        </div>
+    </my-app>
   </body>
   <!-- Load libraries -->
   <!-- IE required polyfills, in this exact order -->

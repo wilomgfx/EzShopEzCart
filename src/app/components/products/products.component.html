@@ -10,7 +10,7 @@
         <div class="card-block">
           <p class="card-text">{{product.description}}</p>
           <a class="card-link" (click)="gotoDetail(product)">Plus de détails</a>
-          <a href="#" class="btn btn-primary">Ajouter au pannier</a>
+          <a class="btn btn-primary" (click)="addToCart(product)">Ajouter au pannier</a>
         </div>
       </div>
     </div>

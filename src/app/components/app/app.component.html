@@ -10,8 +10,8 @@
         <li class="nav-item">
            <a [routerLink]="['Products']" class="nav-link" href="#">Products</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
+        <li class="nav-item pull-md-right">
+          <a class="nav-link" href="#">Cart({{cartService.getNumOfProducts()}})<i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
         </li>
       </ul>
   </div><!-- ./navbar collapse -->

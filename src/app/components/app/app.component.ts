@@ -4,6 +4,8 @@ import {HomeComponent} from '../home/home.component';
 import {ProductsComponent} from '../products/products.component';
 import {ProductDetailComponent} from '../product/product.component';
 import {ProductService} from '../../services/product.service';
+import {CartService} from '../../services/cart.service';
+import {Cart} from '../../models/cart';
 
 @Component({
   selector: 'my-app',
@@ -12,7 +14,8 @@ import {ProductService} from '../../services/product.service';
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
-    ProductService
+    ProductService,
+    CartService
   ]
 })
 
@@ -28,5 +31,10 @@ import {ProductService} from '../../services/product.service';
 ])
 
 export class AppComponent {
-  title = 'Yaecs - Yet an other e-commerce system!';
+
+    constructor(public cartService : CartService){ }
+
+
+
+    public title = 'Yaecs - Yet an other e-commerce system!';
 }
