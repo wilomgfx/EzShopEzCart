@@ -5,3 +5,4 @@ typings/
 libs/
 vendor/
 .idea/
+.sass-cache
