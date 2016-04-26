@@ -10,7 +10,7 @@ import {CurrencyPipe} from 'angular2/common';
   templateUrl: 'src/app/components/product/product.component.html',
   styleUrls:['src/app/components/product/product.component.css'],
   pipes:[CurrencyPipe],
-  inputs: ['apparel']
+  inputs: ['product']
 })
 
 export class ProductDetailComponent  implements OnInit {
@@ -23,7 +23,7 @@ export class ProductDetailComponent  implements OnInit {
   ngOnInit() {
     var id = +this._routeParams.get('id');
     this._productService.getProduct(id)
-      .then(apparel => this.product = apparel);
+      .then(product => this.product = product);
   }
   goBack() {
       window.history.back();

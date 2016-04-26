@@ -16,26 +16,26 @@ import {Cart} from '../../models/cart';
 
 export class ProductsComponent  implements OnInit {
 
-     public products: Product[];
+    public products: Product[];
 
-     selectedApparel: Product;
+    selectedApparel: Product;
 
-     onSelect(product: Product) {
+    onSelect(product: Product) {
        this.selectedApparel = product;
     }
 
-     constructor(private _roductService: ProductService,private _router: Router, private _cartService : CartService) { }
+    constructor(private _productService: ProductService,private _router: Router, private _cartService : CartService) { }
 
-     getApparels() {
+    getApparels() {
        // => syntax is equivalent to function(heroes) return this.heroes
-       this._roductService.getProducts().then(apparels => this.products = apparels);
+       this._productService.getProducts().then(apparels => this.products = apparels);
     }
 
-     ngOnInit() {
+    ngOnInit() {
        this.getApparels();
     }
 
-     gotoDetail(product: Product) {
+    gotoDetail(product: Product) {
        var link = ['ProductDetail', { id: product.Id }];
        this._router.navigate(link);
     }

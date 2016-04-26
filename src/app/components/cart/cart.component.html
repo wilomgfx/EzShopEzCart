@@ -1,0 +1,11 @@
+<div class="cart">
+    <div class="cart__items" *ngFor="#product of products">
+         <a class="card-link" (click)="gotoDetail(product)">
+            <div class="cart__items--single">
+                <h1>{{product.name}}</h1>
+                <h2>{{product.price | currency:'CAD':true}}</h2>
+                <hr>
+            </div>
+        </a>
+    </div>
+</div>
