@@ -1,6 +1,6 @@
 {
   "injectChanges": true,
-  "files": [ "./**/*.{html,htm,css,js}" ],
+  "files": [ "app/css/yaecs.css", "app/js/*.js" ],
   "watchOptions": { "ignored": "node_modules" },
   "server": { "baseDir": "./" }
 }

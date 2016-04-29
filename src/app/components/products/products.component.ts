@@ -10,7 +10,6 @@ import {Cart} from '../../models/cart';
 @Component({
   selector: 'yaecs-products',
   templateUrl: 'src/app/components/products/products.component.html',
-  styleUrls:['src/app/components/products/products.component.css'],
   pipes:[CurrencyPipe]
 })
 

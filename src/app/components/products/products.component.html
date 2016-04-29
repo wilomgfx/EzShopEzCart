@@ -6,7 +6,7 @@
           <h4 class="card-title">{{product.name}}</h4>
           <h6 class="card-subtitle text-muted">{{product.price | currency:'CAD':true}}</h6>
         </div>
-        <img class="card-img-top" data-src="{{product.imagePath}}" alt="Card image cap">
+        <img class="card-img-top card-img-top--fixed-height" data-src="{{product.imagePath}}" alt="Card image cap">
         <div class="card-block">
           <p class="card-text">{{product.description}}</p>
           <a class="card-link" (click)="gotoDetail(product)">Plus de détails</a>

@@ -13,7 +13,6 @@ import {Logger} from '../../helpers/logger';
 @Component({
   selector: 'my-app',
   templateUrl: 'src/app/components/app/app.component.html',
-  styleUrls : ['src/app/components/app/app.component.css'],
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,

@@ -9,7 +9,6 @@ import { Router } from 'angular2/router';
 @Component({
   selector: '[yaecs-cart]',
   templateUrl: 'src/app/components/cart/cart.component.html',
-  styleUrls:['src/app/components/cart/cart.component.css'],
   pipes:[CurrencyPipe]
 })
 

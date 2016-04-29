@@ -3,8 +3,8 @@ var sass = require('gulp-sass');
 
 gulp.task('styles', function() {
     gulp.src('src/styles/**/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./css/'));
+        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
+        .pipe(gulp.dest('./app/css/'));
 });
 
 //Watch task

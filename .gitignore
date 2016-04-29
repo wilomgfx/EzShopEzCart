@@ -3,6 +3,5 @@ node_modules/
 bower_components/
 typings/
 libs/
-vendor/
 .idea/
 .sass-cache/

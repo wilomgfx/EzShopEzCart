@@ -1,26 +1,12 @@
-html{
-  position: relative;
-  min-height: 100%;
-}
+// Modules and Variables
+@import "partials/base";
 
-body {
-  /* Required for navbar fixed-top */
-  padding-top: 70px;
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  margin-bottom: 0px;
-}
+//Angular components partials
+@import "partials/components/product";
 
-.thumbnail__detail--mediumsize{
+// Partials
+@import "partials/globals";
+@import "partials/footer";
+// ...
 
-}
-
-.badge{
-  color:yellow
-}
+// Third-party

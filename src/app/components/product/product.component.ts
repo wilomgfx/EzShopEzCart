@@ -8,7 +8,6 @@ import {CurrencyPipe} from 'angular2/common';
 @Component({
   selector: 'yaecs-product-detail',
   templateUrl: 'src/app/components/product/product.component.html',
-  styleUrls:['src/app/components/product/product.component.css'],
   pipes:[CurrencyPipe],
   inputs: ['product']
 })

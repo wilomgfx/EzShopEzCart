@@ -1,0 +1,10 @@
+html{
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Required for navbar fixed-top */
+  padding-top: 70px;
+  margin-bottom: 60px;
+}
