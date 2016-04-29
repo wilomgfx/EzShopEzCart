@@ -5,6 +5,7 @@ import { Product  } from '../../models/product';
 import { CartService } from '../../services/cart.service';
 import { CurrencyPipe } from 'angular2/common';
 import { Router } from 'angular2/router';
+import { Logger } from '../../helpers/logger';
 
 @Component({
   selector: '[yaecs-cart]',
@@ -16,9 +17,12 @@ export class CartComponent {
 
     public products: Product[];
 
+    public noProducts : boolean;
+
     constructor(private _cartService : CartService , private _router: Router)
     {
         this.products = _cartService.getProducts();
+        this.noProducts = (this.products.length == 0);
     }
 
     gotoDetail(product: Product) {

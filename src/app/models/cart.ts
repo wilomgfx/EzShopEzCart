@@ -1,33 +1,41 @@
+import {CartItem} from './cartItem';
 import {Product} from './product';
 interface ICart {
   Id: number;
-  products:Product[];
+  CartItems:CartItem[];
 }
 
 
 export class Cart implements ICart{
 
     constructor(){
-        this.products = [];
+        this.CartItems = [];
     }
     public Id:number;
 
-    public products: Product[];
+    public CartItems: CartItem[];
 
     public getNumOfProducts(){
-        return this.products.length;
+        return this.CartItems.length;
     }
 
     public addToCart(product:Product){
-        this.products.push(product);
+        var cartItem = new CartItem(product);
+        this.CartItems.push(cartItem);
     }
 
     public removeFromCart(product:Product){
-        var index: number = this.products.indexOf(product, 0);
-        this.products.splice(index);
+        var cartItem = new CartItem(product);
+        var index: number = this.CartItems.indexOf(cartItem, 0);
+        this.CartItems.splice(index);
     }
 
     public getProducts(){
-        return this.products;
+        var products = [];
+        for(var cartItem of this.CartItems)
+        {
+            products.push(cartItem.Product);
+        }
+        return products;
     }
 }
