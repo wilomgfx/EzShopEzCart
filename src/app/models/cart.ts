@@ -1,41 +1,76 @@
-import {CartItem} from './cartItem';
-import {Product} from './product';
+import { CartItem } from './cartItem';
+import { Product } from './product';
+import { Logger } from '../helpers/Logger';
 interface ICart {
   Id: number;
-  CartItems:CartItem[];
+  cartItems:CartItem[];
 }
 
 
 export class Cart implements ICart{
 
     constructor(){
-        this.CartItems = [];
+        this.cartItems = [];
     }
-    public Id:number;
+    Id:number;
 
-    public CartItems: CartItem[];
+    cartItems: CartItem[];
+
+    private findCartItemById(id){
+
+        var products = this.getProducts();
+
+        for(var product of products){
+            return product.Id === id;
+        }
+    }
+
+    private findProductById(source, id) {
+        return source.filter(function( obj ) {
+            // coerce both obj.id and id to numbers
+            // for val & type comparison
+            return +obj.product.id === +id;
+        })[ 0 ];
+    }
 
     public getNumOfProducts(){
-        return this.CartItems.length;
+        return this.cartItems.length;
     }
 
     public addToCart(product:Product){
-        var cartItem = new CartItem(product);
-        this.CartItems.push(cartItem);
+        var cartItem = this.findProductById(this.cartItems,product.id);
+        if(cartItem){
+            cartItem.qty++;
+        }
+        else{
+            var newCartItem = new CartItem(product);
+            this.cartItems.push(newCartItem);
+        }
+    }
+
+    public removeOneFromCart(product:Product){
+        var cartItem = this.findProductById(this.cartItems,product.id);
+        if(cartItem){
+            cartItem.qty--;
+        }
     }
 
     public removeFromCart(product:Product){
-        var cartItem = new CartItem(product);
-        var index: number = this.CartItems.indexOf(cartItem, 0);
-        this.CartItems.splice(index);
+        var cartItem = this.findProductById(this.cartItems,product.id);
+        var index: number = this.cartItems.indexOf(cartItem, 0);
+        this.cartItems.splice(index);
     }
 
     public getProducts(){
         var products = [];
-        for(var cartItem of this.CartItems)
+        for(var cartItem of this.cartItems)
         {
-            products.push(cartItem.Product);
+            products.push(cartItem.product);
         }
         return products;
+    }
+    public getCartItems(){
+
+        return this.cartItems;
     }
 }

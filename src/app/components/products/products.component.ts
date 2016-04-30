@@ -25,17 +25,17 @@ export class ProductsComponent  implements OnInit {
 
     constructor(private _productService: ProductService,private _router: Router, private _cartService : CartService) { }
 
-    getApparels() {
+    getProducts() {
        // => syntax is equivalent to function(heroes) return this.heroes
-       this._productService.getProducts().then(apparels => this.products = apparels);
+       this._productService.getProducts().then(products => this.products = products);
     }
 
     ngOnInit() {
-       this.getApparels();
+       this.getProducts();
     }
 
     gotoDetail(product: Product) {
-       var link = ['ProductDetail', { id: product.Id }];
+       var link = ['ProductDetail', { id: product.id }];
        this._router.navigate(link);
     }
 

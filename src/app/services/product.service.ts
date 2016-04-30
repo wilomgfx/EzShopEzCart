@@ -6,9 +6,9 @@ export class ProductService {
     getProducts() {
         return Promise.resolve(PRODUCTS);
     }
-    getProduct(Id: number) {
+    getProduct(id: number) {
         return Promise.resolve(PRODUCTS).then(
-            heroes => heroes.filter(apparel => apparel.Id === Id)[0]
+            products => products.filter(product => product.id === id)[0]
         );
     }
 

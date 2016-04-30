@@ -1,12 +1,17 @@
 <div class="cart">
-    <div *ngIf="noProducts">Rien dans le pannier...</div>
-    <div class="cart__items" *ngFor="#product of products">
+    <div *ngIf="noCartItems">Rien dans le pannier...</div>
+    <div class="cart__items" *ngFor="#cartItem of cartItems">
         <div class="cart__items--single">
-            <a class="card-link" (click)="gotoDetail(product)">
-                <h1>Nom : {{product.name}}</h1>
+            <a class="card-link" (click)="gotoDetail(cartItem.product)">
+                <h1>Nom : {{cartItem.product.name}}</h1>
             </a>
-            <h2>Prix: {{product.price | currency:'CAD':true}}</h2>
-            <!-- <h2>Quantité: {{cart.product.qty}}</h2> -->
+            <h2>Prix: {{cartItem.product.price | currency:'CAD':true}}</h2>
+            <h2>Quantité: {{cartItem.qty}}</h2>
+            <div class="btn-group" role="group" aria-label="Cart actions">
+              <button type="button" class="btn btn-primary" (click)="addOneToCart(cartItem.product)">+</button>
+              <button type="button" class="btn btn-danger" (click)="removeOneFromCart(cartItem.product)">-</button>
+            </div>
+            <button type="button" class="btn btn-danger" (click)="removeFromCart(cartItem.product)">Enlever du pannier</button>
             <hr>
         </div>
     </div>

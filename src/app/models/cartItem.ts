@@ -1,16 +1,17 @@
 import {Product} from './product';
 interface ICartItem {
-  Qty:number;
-  Product:Product;
+  qty:number;
+  product:Product;
 }
+
 export class CartItem implements ICartItem{
 
     constructor(product: Product){
-        this.Product = product;
-        this.Qty = this.Qty++;
+        this.product = product;
+        this.qty = 1;
     }
 
-    public Qty:number;
+    public qty:number;
 
-    public Product:Product;
+    public product:Product;
 }
