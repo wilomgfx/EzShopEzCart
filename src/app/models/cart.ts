@@ -2,28 +2,22 @@ import { CartItem } from './cartItem';
 import { Product } from './product';
 import { Logger } from '../helpers/Logger';
 interface ICart {
-  Id: number;
+  id: number;
   cartItems:CartItem[];
 }
 
-
+/**
+ * Cart model
+ */
 export class Cart implements ICart{
 
     constructor(){
         this.cartItems = [];
     }
-    Id:number;
+
+    id:number;
 
     cartItems: CartItem[];
-
-    private findCartItemById(id){
-
-        var products = this.getProducts();
-
-        for(var product of products){
-            return product.Id === id;
-        }
-    }
 
     private findProductById(source, id) {
         return source.filter(function( obj ) {
@@ -50,7 +44,7 @@ export class Cart implements ICart{
 
     public removeOneFromCart(product:Product){
         var cartItem = this.findProductById(this.cartItems,product.id);
-        if(cartItem){
+        if(cartItem && cartItem.qty > 1){
             cartItem.qty--;
         }
     }

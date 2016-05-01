@@ -9,6 +9,7 @@ import {CartService} from '../../services/cart.service';
 import {Cart} from '../../models/cart';
 import {Product} from '../../models/Product';
 import {Logger} from '../../helpers/logger';
+import {Title} from 'angular2/platform/browser';
 
 @Component({
   selector: 'my-app',
@@ -17,7 +18,8 @@ import {Logger} from '../../helpers/logger';
   providers: [
     ROUTER_PROVIDERS,
     ProductService,
-    CartService
+    CartService,
+    Title
   ]
 })
 
@@ -35,13 +37,18 @@ import {Logger} from '../../helpers/logger';
 
 export class AppComponent {
 
-    constructor(public cartService : CartService, private _router: Router){ }
+    constructor(public cartService : CartService, private _router: Router , title:Title){
+        _router.subscribe((url)=>{ //fires on every URL change
+          title.setTitle("Yeacs - " + url);
+       });
+    }
 
-    public products: Product[];
-    public showCart(){
+    products: Product[];
+
+    showCart(){
         this.products = this.cartService.getProducts();
         this._router.navigateByUrl('/cart');
     }
 
-    public title = 'Yaecs - Yet an other e-commerce system!';
+    title = 'Yaecs - Yet an other e-commerce system!';
 }

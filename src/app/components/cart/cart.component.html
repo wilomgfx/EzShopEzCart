@@ -2,11 +2,11 @@
     <div *ngIf="noCartItems">Rien dans le pannier...</div>
     <div *ngFor="#cartItem of cartItems">
         <div class="row cart-item">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <a class="card-link" (click)="gotoDetail(cartItem.product)">
-                    <h1>Nom : {{cartItem.product.name}}</h1>
+                    <h1>{{cartItem.product.name}}</h1>
                 </a>
-                <h2>Prix: {{cartItem.product.price | currency:'CAD':true}}</h2>
+                <h2>{{cartItem.product.price | currency:'CAD':true}}</h2>
                 <h2>Quantité: {{cartItem.qty}}</h2>
                 <div class="btn-group" role="group" aria-label="Cart actions">
                   <button type="button" class="btn btn-primary" (click)="addOneToCart(cartItem.product)">+</button>
@@ -14,7 +14,7 @@
                 </div>
                 <button type="button" class="btn btn-danger" (click)="removeFromCart(cartItem.product)">Enlever du pannier</button>
             </div>
-            <div class="col-md-6 cart-item__image">
+            <div class="col-md-4 cart-item__image">
                 <img class="card-img-top card-img-top--fixed-height" src="{{cartItem.product.imagePath}}" alt="Card image cap">
             </div>
         </div>

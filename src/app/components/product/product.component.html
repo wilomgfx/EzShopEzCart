@@ -8,8 +8,8 @@
         <img class="card-img-top" data-src="{{product.imagePath}}" alt="Card image cap">
         <div class="card-block">
           <p class="card-text">{{product.description}}</p>
-          <a href="#" class="btn btn-primary">Ajouter au pannier</a>
-          <button class="btn btn-danger" (click)="goBack()">Retour</button>
+          <button class="btn btn-primary" (click)="addToCart(product)">Ajouter au pannier</button>
+          <button class="btn btn-secondary" (click)="goBack()">Retour</button>
         </div>
       </div>
     </div>
