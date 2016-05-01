@@ -52,7 +52,7 @@ export class Cart implements ICart{
     public removeFromCart(product:Product){
         var cartItem = this.findProductById(this.cartItems,product.id);
         var index: number = this.cartItems.indexOf(cartItem, 0);
-        this.cartItems.splice(index);
+        this.cartItems.splice(index,1);
     }
 
     public getProducts(){
